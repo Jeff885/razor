@@ -786,8 +786,10 @@ private static JSONObject getErrorInfoJSONObj() {
 			    clientData.put("havegravity", CommonUtil.isHaveGravity(context));//
 			
 			    LatitudeAndLongitude coordinates = CommonUtil.getLatitudeAndLongitude(context, UmsAgent.mUseLocationService);
-			    clientData.put("latitude", coordinates.latitude);
-			    clientData.put("longitude", coordinates.longitude);  
+			    //clientData.put("latitude", coordinates.latitude);
+			   // clientData.put("longitude", coordinates.longitude);  
+			    clientData.put("latitude",CommonUtil.getLatitudeAndLongitude(context, mUseLocationService).latitude);
+			    clientData.put("longitude",CommonUtil.getLatitudeAndLongitude(context, mUseLocationService).latitude);
 			    CommonUtil.printLog("clientData---------->",clientData.toString());
 			 	} catch (JSONException e) {  
 					e.printStackTrace();
